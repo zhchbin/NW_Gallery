@@ -1,0 +1,9 @@
+{
+  "name": "nw-menuitem",
+  "main": "index.html", 
+  "window": {
+    "toolbar": false,
+    "width": 525,
+    "height": 325
+  }
+}

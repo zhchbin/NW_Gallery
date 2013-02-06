@@ -1,0 +1,38 @@
+{
+  "apis": [
+    {
+      "name": "Window",
+      "hasdemo": true,
+      "description": "Window is a wrapper of DOM's window object, it has extended operations and can receive various window events. Every Window is an instance of EventEmitter object, and you're able to use Window.on(...) to response to native window's events."   }, 
+    {
+      "name": "Frameless-Window",
+      "hasdemo": true,
+      "description": "A frameless window is a window without standard frames and window buttons, usually you would use a frameless window to custom titlebar and other standard window buttons. To have a quick glance of it, you can visit the frameless-window and webgl demo in nw-sample-apps."
+    }, 
+    {
+      "name": "Menu",
+      "hasdemo": true,
+      "description": "Menu represents a native menu, it can be used as window menu or context menu."
+    }, 
+    {
+      "name": "MenuItem",
+      "hasdemo": true,
+      "description": "MenuItem represents an item in a menu. A MenuItem can be a separator or a normal item which has label and icon. MenuItem is usually used with Menu together."
+    }, 
+    {
+      "name": "Clipboard", 
+      "hasdemo": false,
+      "description": "Clipboard is an abstraction of clipboard(Windows and GTK) and pasteboard(Mac), currently it only supports reading and writing plain text in the system clipboard."
+    }, 
+    {
+      "name": "Tray",
+      "hasdemo": true,
+      "description": "Tray is an abstraction of different controls on different platforms, usually it's a small icon shown on the OS's notification area. On Mac it's called Status Item, on GTK it's Status Icon, and on Windows it's System Tray Icon."
+    }, 
+    {
+      "name": "Shell",
+      "hasdemo": false,
+      "description": "Shell is a collection of APIs that do desktop related jobs."
+    }
+  ]
+}

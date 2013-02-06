@@ -1,0 +1,91 @@
+<html>
+  <head><title> Node Webkit MenuItem Demo</title></head>
+  <body>
+    <script>
+      function log(msg) {
+        var msgDiv = document.createElement('div');
+        msgDiv.innerHTML = msg
+        var logDiv = document.getElementById("log");
+        logDiv.appendChild(msgDiv);
+      }
+
+      var gui = require('nw.gui');
+      var spearatorMenuitem = new gui.MenuItem({ type: 'separator' })
+
+      var menu = new gui.Menu();
+      var newFileItem = new gui.MenuItem({label: 'New File'});
+      newFileItem.click = function() {
+        log("New file menu item was clicked");
+      }
+      var saveItem = new gui.MenuItem({label: 'Save', icon: 'save.png'});
+      saveItem.click = function() {
+        log("Save menu item was clicked");
+      }
+      var recentFilesItem = new gui.MenuItem({label: 'Recent Files'});
+      var submenu = new gui.Menu();
+      var recentFiles = new Array(
+        new gui.MenuItem({
+          label: "E:\\05-Chromium\\src\\content\\nw\\src\\nw_package.cc"
+        }),
+        new gui.MenuItem({
+          label: "E:\\05-Chromium\\src\\content\\nw\\src\\nw_package.h"
+        }),
+        new gui.MenuItem({
+          label: "E:\\05-Chromium\\src\\content\\nw\\src\\nw_shell.cc"
+        }), 
+        new gui.MenuItem({
+          label: "E:\\05-Chromium\\src\\content\\nw\\src\\nw_shell.h"
+        })
+      ); 
+      for (var i = 0; i < recentFiles.length; ++i) {
+        submenu.append(recentFiles[i]);
+      }
+
+      submenu.append(spearatorMenuitem);
+      recentFilesItem.submenu = submenu;
+
+      menu.append(newFileItem);
+      menu.append(saveItem);
+      menu.append(recentFilesItem); 
+      
+      menu.append(spearatorMenuitem);
+      menu.append(new gui.MenuItem({
+        label: 'Exit',
+        click: function() {
+          gui.App.quit();
+        }
+      }));
+
+      var menubar = new gui.Menu({ type: 'menubar' });
+      menubar.append(new gui.MenuItem({ label: 'File', submenu: menu}));
+      menubar.append(new gui.MenuItem({ label: 'Edit'}));
+
+      var helpMenu = new gui.Menu();
+
+      helpMenu.append(new gui.MenuItem({
+        label: "Auto Update",
+        type: "checkbox",
+        checked: true
+      }));
+      helpMenu.append(new gui.MenuItem({
+        label: "Report a bug...",
+        enabled: false
+      }));
+      helpMenu.append(spearatorMenuitem); 
+      helpMenu.append(new gui.MenuItem({
+        label: "About",
+        click: function() {
+          alert("MenuItem API Demo -- By zhchbin");
+        }
+      }));
+      menubar.append(new gui.MenuItem({ label: 'Help', submenu: helpMenu}));
+
+      var win = gui.Window.get();
+      win.menu = menubar;
+
+    </script>
+
+    <div id="log"></div>
+  </body>
+</html>
+

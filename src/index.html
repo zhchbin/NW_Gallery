@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Node-Webkit Gallery</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <!-- Le styles -->
+    <link rel="stylesheet" type="text/css" href="css/metro-bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+  </head>
+  <body>
+    <div class="navbar navbar-fixed-top">
+        <div class="navbar-inner">
+          <div class="nav-collapse collapse">
+            <ul class="nav">
+              <li class="active"> <a href="javascript:void(0);" data-con="overview">Overview</a></li>
+              <li><a href="javascript:void(0);" data-con="demo">API Demos</a></li>
+            </ul>
+           </div>
+        </div>
+      </div>
+
+      <div class="container content" id="overview">
+        <div class="container">
+          <div class="span5">
+            <h3>Introduction</h3>  
+            <p> node-webkit is an app runtime based on Chromium and node.js. You can write native apps in HTML and Javascript with node-webkit. It also lets you to call Node.js modules directly from DOM and enables a new way of writing native applications with all Web technologies.
+            </p>
+            <p>It's created and developed in Intel Open Source Technology Center.</p> 
+          </div> 
+          <div class="span6">
+            <h3>Features</h3> 
+            <ul>
+              <li>Apps written in modern HTML5, CSS3, JS and WebGL.</li>
+              <li>Complete support for <a data-href="http://nodejs.org/api/" class="browserLink" href="javascript:void(0);">Node.js APIs</a> and all its <a data-href="https://npmjs.org" class="browserLink" href="javascript:void(0);">third party modules</a>.</li>
+              <li>Good performance: Node and WebKit runs in the same thread: Function calls are made straightforward; objects are in the same heap and can just reference each other;</li>
+              <li>Easy to package and distribute apps.</li>
+              <li>Available on Linux, Mac OSX and Windows</li>
+            </ul>
+
+          </div>
+        </div>
+
+        <div class="container">
+          <div class="span11">
+            <h3>Quick Start</h3>
+            <p>Create <code>index.html</code>:</p> 
+            <div>
+              <pre class="highlight">
+<span class="nt">&lt;html&gt;</span>
+<span class="nt">&lt;head&gt;</span>
+<span class="nt">&lt;title&gt;</span>Hello World!<span class="nt">&lt;/title&gt;</span>
+<span class="nt">&lt;/head&gt;</span>
+<span class="nt">&lt;body&gt;</span>
+<span class="nt">&lt;h1&gt;</span>Hello World!<span class="nt">&lt;/h1&gt;</span>
+We are using node.js <span class="nt">&lt;script&gt;</span><span class="nb">document</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="nx">process</span><span class="p">.</span><span class="nx">version</span><span class="p">)</span><span class="nt">&lt;/script&gt;</span>
+<span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/html&gt;</span>
+</pre></div>
+<p>Create <code>package.json</code>:</p>
+<div class="highlight"><pre><span class="p">{</span>
+  <span class="nt">"name"</span><span class="p">:</span> <span class="s2">"nw-demo"</span><span class="p">,</span>
+  <span class="nt">"main"</span><span class="p">:</span> <span class="s2">"index.html"</span>
+<span class="p">}</span>
+</pre></div>
+<p>Compress <code>index.html</code> and <code>package.json</code> into a zip archive, and rename
+it to <code>app.nw</code>:</p>
+<pre><code>app.nw
+|-- package.json
+`-- index.html
+</code></pre>
+<p>Download the prebuilt binary for your platform and use it to open the
+<code>app.nw</code> file:</p>
+<div class="highlight"><pre><span class="nv">$ </span>./nw app.nw
+</pre></div>
+<p>Note: on Windows, you can drag the <code>app.nw</code> to <code>nw.exe</code> to open it.</p>            
+      </div>
+    </div>
+   </div>
+
+   <div class="container hide content" id="demo">
+     <div class="container">
+       <div class="span11">
+         <h3>Native UI API</h3>
+<div class="tabbable tabs-left">
+        <ul class="nav nav-tabs" id="nativeui-tabs">
+        </ul>
+        <div class="tab-content" id="nativeui-con">
+        </div>
+      </div>
+
+       </div>
+     </div>
+   </div>
+
+     <script type="text/javascript" src="js/jquery-1.8.0.js"></script>
+     <script type="text/javascript" src="js/bootstrap-tab.js"></script>
+     <script type="text/javascript" src="js/index.js"></script>
+   </body>
+</html>
+

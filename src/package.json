@@ -1,0 +1,11 @@
+{
+  "name": "nw-test",
+  "main": "index.html",
+  "window": {
+    "toolbar": false,
+    "width": 1000,
+    "height": 650,
+    "resizable": false
+  }
+}
+
